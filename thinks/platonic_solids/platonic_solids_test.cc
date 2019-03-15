@@ -9,13 +9,13 @@
 
 namespace {
 
-void DummyTest() {
-  int a = 2;
+TEST_CASE("DummyTest") {
+  int a = 3;
   int b = 3;
   REQUIRE(a == b);
 }
 
-void DummyTest2() {
+TEST_CASE("DummyTest2") {
   const auto oct_mesh = thinks::Octahedron<float, int>();
 }
 

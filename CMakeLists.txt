@@ -17,10 +17,6 @@ target_include_directories(thinks_platonic_solids
     ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
-#if(MSVC)
-#    target_compile_definitions(thinks_obj_io INTERFACE "-D_SCL_SECURE_NO_WARNINGS")
-#endif()
-
 option(PLATONIC_SOLIDS_RUN_TESTS "If ON, platonic_solids tests will be run." OFF)
 
 if(${PLATONIC_SOLIDS_RUN_TESTS})
@@ -31,7 +27,6 @@ if(${PLATONIC_SOLIDS_RUN_TESTS})
   message(STATUS "platonic_solids: tests enabled")
 endif()
 
-#if(${CMAKE_CURRENT_SOURCE_DIR} STREQUAL ${CMAKE_SOURCE_DIR})
 if (BUILD_TESTING)
   include(CTest)
   enable_testing()

@@ -1,0 +1,9 @@
+{
+  "editor.tabSize": 2,
+  "editor.fontSize": 12,
+  "cmake.configureSettings": {
+    "PLATONIC_SOLIDS_RUN_TESTS" : "ON"
+  },
+  "cmake.ctest.parallelJobs": 8,
+  "cmake.ctestArgs": ["-V"]
+}
