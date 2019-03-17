@@ -40,5 +40,6 @@ if (BUILD_TESTING)
     PRIVATE
       thinks_platonic_solids
       Catch2::Catch2)
+  set_target_properties(thinks_platonic_solids_test PROPERTIES CXX_STANDARD 11)
   add_test(NAME thinks_platonic_solids_test COMMAND thinks_platonic_solids_test)
 endif()
