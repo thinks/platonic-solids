@@ -16,7 +16,7 @@ TEST_CASE("DummyTest") {
 }
 
 TEST_CASE("DummyTest2") {
-  const auto oct_mesh = thinks::Octahedron<float, int>();
+  const auto oct_mesh = thinks::OctahedronTriangleMesh<float, int>();
 }
 
 } // namespace

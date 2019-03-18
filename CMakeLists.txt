@@ -18,6 +18,8 @@ target_include_directories(thinks_platonic_solids
 )
 
 option(PLATONIC_SOLIDS_RUN_TESTS "If ON, platonic_solids tests will be run." OFF)
+option(PLATONIC_SOLIDS_GENERATE_MODELS "If ON, platonic_solids models will be generated." OFF)
+
 
 if(${PLATONIC_SOLIDS_RUN_TESTS})
   # Enable CTest. This will set BUILD_TESTING to ON unless otherwise 
@@ -43,3 +45,26 @@ if (BUILD_TESTING)
   set_target_properties(thinks_platonic_solids_test PROPERTIES CXX_STANDARD 11)
   add_test(NAME thinks_platonic_solids_test COMMAND thinks_platonic_solids_test)
 endif()
+
+if (${PLATONIC_SOLIDS_GENERATE_MODELS})
+  message(STATUS "platonic_solids: generate models enabled")
+  
+  add_subdirectory(external/obj-io)
+
+  add_executable(thinks_generate_platonic_solid_models "")
+  target_sources(thinks_generate_platonic_solid_models
+    PRIVATE
+      thinks/platonic_solids/generate_models.cc)
+  target_link_libraries(thinks_generate_platonic_solid_models
+    PRIVATE
+      thinks_platonic_solids
+      thinks_obj_io)
+
+  add_custom_command(
+    TARGET thinks_generate_platonic_solid_models
+    POST_BUILD    
+    COMMAND thinks_generate_platonic_solid_models ${CMAKE_CURRENT_SOURCE_DIR}/models
+    COMMENT "Generating models...")  
+endif()
+
+
