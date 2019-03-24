@@ -65,7 +65,7 @@ void WriteObjMesh(const std::string& file_name, const MeshT& mesh) {
   // Open the OBJ file and pass in the mappers.
   auto ofs = std::ofstream(file_name);
   if (!ofs) {
-    throw std::runtime_error("failed opening '" + file_name + "'");
+    throw std::runtime_error("failed to open '" + file_name + "'");
   }
 
   const auto result = thinks::obj_io::Write(ofs, pos_mapper, face_mapper);

@@ -1,0 +1,11 @@
+[
+  {
+    "name": "Visual Studio Community 2017 Preview (x64)",
+    "visualStudio": "VisualStudio.15.0",
+    "visualStudioArchitecture": "x64",
+    "compilers": {
+      "C": "C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/VC/Tools/MSVC/14.16.27023/bin/Hostx64/x64/cl.exe",
+      "CXX": "C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/VC/Tools/MSVC/14.16.27023/bin/Hostx64/x64/cl.exe"
+    }
+  }
+]
