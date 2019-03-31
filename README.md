@@ -9,5 +9,7 @@ The motivation for this small project is that it is hard to find models of the p
 
 The images were rendered with a path tracer using Monte-Carlo sampling. The noise present in the images is typical for this type of process, where noise is iteratively removed as sampling increases. Finally, the wireframes were manually added as a post-processing step. 
 
+Everything in this repository is released under the [MIT license](https://en.wikipedia.org/wiki/MIT_License).
+
 ## Future Work
 It would be more clear to re-order the vertices such that they correspond to the table found at [wikipedia](https://en.wikipedia.org/wiki/Platonic_solid#Cartesian_coordinates).
