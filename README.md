@@ -49,7 +49,7 @@ struct MyMesh {
 // Takes in any of the platonic solids and returns a scaled copy
 // in another mesh format.
 template <typename MeshT>
-MyMesh ScaledSolid(const MeshT &mesh, const float scale) {
+MyMesh ScaledSolid(const MeshT& mesh, const float scale) {
   using MeshPositionsType = decltype(typename MeshT::positions);
   using MeshIndicesType = decltype(typename MeshT::triangle_indices);
 
@@ -60,9 +60,9 @@ MyMesh ScaledSolid(const MeshT &mesh, const float scale) {
   my_mesh.positions.reserve(kPosCount);
   for (std::size_t i = 0; i < kPosCount; ++i) {
     my_mesh.positions.push_back(MyVec3{
-      scale * mesh.positions[3 * i],
-      scale * mesh.positions[3 * i + 1],
-      scale * mesh.positions[3 * i + 2],
+        scale * mesh.positions[3 * i],
+        scale * mesh.positions[3 * i + 1],
+        scale * mesh.positions[3 * i + 2],
     });
   }
 
@@ -77,8 +77,10 @@ MyMesh ScaledSolid(const MeshT &mesh, const float scale) {
 }
 
 MyMesh ScaledIcosahedron() {
-  // Note that we pass the types to be used for positions and indices 
-  return ScaledSolid(thinks::IcosahedronTriangleMesh<float, std::uint32_t>(), 2.f);
+  // Note that we provide the types to be used for the platonic solid
+  // positions and indices here.
+  return ScaledSolid(thinks::IcosahedronTriangleMesh<float, std::uint32_t>(),
+                     2.f);
 }
 ```
 
