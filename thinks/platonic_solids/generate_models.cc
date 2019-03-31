@@ -104,5 +104,6 @@ int main(int argc, char* argv[]) {
   GenerateMeshFile(
     mesh_file_prefix, "20_icosahedron.obj", 
     thinks::IcosahedronTriangleMesh<double, std::uint16_t>());
+
   return 0; 
 }

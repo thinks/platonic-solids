@@ -46,6 +46,8 @@ struct MyMesh {
   std::vector<std::uint32_t> indices;
 };
 
+// Takes in any of the platonic solids and returns a scaled copy
+// in another mesh format.
 template <typename MeshT>
 MyMesh ScaledSolid(const MeshT &mesh, const float scale) {
   using MeshPositionsType = decltype(typename MeshT::positions);
@@ -75,6 +77,7 @@ MyMesh ScaledSolid(const MeshT &mesh, const float scale) {
 }
 
 MyMesh ScaledIcosahedron() {
+  // Note that we pass the types to be used for positions and indices 
   return ScaledSolid(thinks::IcosahedronTriangleMesh<float, std::uint32_t>(), 2.f);
 }
 ```
