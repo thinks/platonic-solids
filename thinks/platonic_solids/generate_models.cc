@@ -28,7 +28,7 @@ void WriteObjMesh(const std::string& file_name, const MeshT& mesh) {
   // Positions.
   auto pos_iter = std::begin(mesh.positions);
   const auto pos_iend = std::end(mesh.positions);
-  auto pos_mapper = [&pos_iter, pos_iend]() {
+  const auto pos_mapper = [&pos_iter, pos_iend]() {
     using ObjPositionElementType = MeshPositionsType::value_type;
     using ObjPositionType = thinks::obj_io::Position<ObjPositionElementType, 3>;
 
@@ -46,7 +46,7 @@ void WriteObjMesh(const std::string& file_name, const MeshT& mesh) {
   // Faces.
   auto idx_iter = std::begin(mesh.triangle_indices);
   const auto idx_iend = std::end(mesh.triangle_indices);
-  auto face_mapper = [&idx_iter, idx_iend]() {
+  const auto face_mapper = [&idx_iter, idx_iend]() {
     using ObjIndexType = thinks::obj_io::Index<MeshIndicesType::value_type>;
     using ObjFaceType = thinks::obj_io::TriangleFace<ObjIndexType>;
 
